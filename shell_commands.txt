@@ -4,6 +4,8 @@ ModelTest-NG v0.1.7 released on 17.03.2021 by The Exelixis Lab.
 RAxML-NG v. 1.2.2 released on 11.04.2024 by The Exelixis Lab.
 FigTree Tree Figure Drawing Tool Version 1.4.4
 
+https://github.com/Rendrick27/FASTA2NEX
+
 
 python3 Script.py 'nucleotide' 'AY749209:AY749246[accn]' 100
 mv algn_AY749209\:AY749246\[accn\].fasta algn_adh1.fasta
