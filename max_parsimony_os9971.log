@@ -1,0 +1,96 @@
+MPBoot version 1.1.0 for Linux 64-bit built Mar 23 2018
+Copyright (c) 2016 Diep Thi Hoang, Le Sy Vinh, Tomas Flouri, Alexandros Stamatakis, Arndt von Haeseler and Bui Quang Minh.
+
+WARNING: Your CPU supports AVX but you are using SSE3 version of MPBoot!
+WARNING: Please switch to AVX version that is 40% faster than SSE3.
+
+Host:    aleff (AVX512F, FMA3, 16 GB RAM)
+Command: mpboot -s algn_os9971.fasta -pre max_parsimony_os9971
+Seed:    253746 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Apr 22 15:10:12 2025
+Kernel:  SSE3
+
+Reading alignment file algn_os9971.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 38 sequences with 757 columns and 147 patterns
+ID   Sequence                                 #Gap/Ambiguity
+1    AY749322.1_Oryza_punctata_voucher        186  (24.571%)	4
+2    AY749321.1_Oryza_australiensis_voucher   240  (31.704%)	4
+3    AY749320.1_Oryza_meridionalis_voucher    279  (36.856%)	4
+4    AY749319.1_Oryza_meridionalis_voucher    279  (36.856%)	4
+5    AY749318.1_Oryza_meridionalis_voucher    279  (36.856%)	4
+6    AY749317.1_Oryza_longistaminata_voucher  166  (21.929%)	4
+7    AY749316.1_Oryza_longistaminata_voucher  172  (22.721%)	4
+8    AY749315.1_Oryza_longistaminata_voucher  166  (21.929%)	4
+9    AY749314.1_Oryza_longistaminata_voucher  150  (19.815%)	4
+10   AY749313.1_Oryza_barthii_voucher         150  (19.815%)	4
+11   AY749312.1_Oryza_barthii_voucher         150  (19.815%)	4
+12   AY749311.1_Oryza_barthii_voucher         150  (19.815%)	4
+13   AY749310.1_Oryza_longistaminata_voucher  150  (19.815%)	4
+14   AY749309.1_Oryza_glaberrima_voucher      150  (19.815%)	4
+15   AY749308.1_Oryza_glaberrima_voucher      150  (19.815%)	4
+16   AY749307.1_Oryza_glumipatula_voucher     150  (19.815%)	4
+17   AY749306.1_Oryza_glumipatula_voucher     150  (19.815%)	4
+18   AY749305.1_Oryza_glumipatula_voucher     150  (19.815%)	4
+19   AY749304.1_Oryza_longistaminata_voucher  152  (20.079%)	4
+20   AY749303.1_Oryza_nivara_voucher          150  (19.815%)	4
+21   AY749302.1_Oryza_nivara_voucher          152  (20.079%)	4
+22   AY749301.1_Oryza_nivara_voucher          150  (19.815%)	4
+23   AY749300.1_Oryza_nivara_voucher          150  (19.815%)	4
+24   AY749299.1_Oryza_nivara_voucher          150  (19.815%)	4
+25   AY749298.1_Oryza_rufipogon_voucher       150  (19.815%)	4
+26   AY749297.1_Oryza_rufipogon_voucher       150  (19.815%)	4
+27   AY749296.1_Oryza_rufipogon_OsRFCD009971  152  (20.079%)	4
+28   AY749295.1_Oryza_rufipogon_voucher       153  (20.211%)	5
+29   AY749294.1_Oryza_rufipogon_voucher       152  (20.079%)	4
+30   AY749293.1_Oryza_rufipogon_voucher       150  (19.815%)	4
+31   AY749292.1_Oryza_rufipogon_voucher       150  (19.815%)	4
+32   AY749291.1_Oryza_sativa_Japonica         152  (20.079%)	4
+33   AY749290.1_Oryza_sativa_Japonica         152  (20.079%)	4
+34   AY749289.1_Oryza_sativa_Japonica         152  (20.079%)	4
+35   AY749288.1_Oryza_sativa_Indica           150  (19.815%)	4
+36   AY749287.1_Oryza_sativa_Indica           150  (19.815%)	4
+37   AY749286.1_Oryza_sativa_Indica           150  (19.815%)	4
+38   AY749285.1_Oryza_sativa_Indica           150  (19.815%)	4
+**** TOTAL                                    6284 (21.845%)
+Time for parsimony tree construction: 0.002 seconds
+Parsimony score: 198
+Reordering patterns in alignment by decreasing order of pattern parsimony... 0.000 seconds
+NOTE: 19 identical sequences will be ignored during tree search
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.000 seconds
+
+NOTE: 0.468 MB RAM is required!
+Current best tree score: 193
+
+Generating 99 parsimony trees... (34 duplicated parsimony trees)
+CPU time: 0
+Finish initializing candidate tree set. Number of distinct locally optimal trees: 66
+Current best score: 193 / CPU time: 0
+
+Time: 0h:0m:0s
+RATCHET Iteration 10 / Score: 193 / Time: 0h:0m:0s
+RATCHET Iteration 20 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 30 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 40 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 50 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 60 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 70 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 80 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 90 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+RATCHET Iteration 100 / Score: 193 / Time: 0h:0m:0s (0h:0m:0s left)
+Scores of best 5 trees: 
+193 193 193 193 193 
+BEST SCORE FOUND : 193
+
+CPU time used for tree search: 0.078 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.078 sec (0h:0m:0s)
+Total CPU time used: 0.080 sec (0h:0m:0s)
+Total wall-clock time used: 0.080 sec (0h:0m:0s)
+
+Analysis results written to: 
+  MPBoot report:                 max_parsimony_os9971.mpboot
+  Maximum-parsimony  tree:       max_parsimony_os9971.treefile
+  Screen log file:               max_parsimony_os9971.log
+
+Date and Time: Tue Apr 22 15:10:12 2025

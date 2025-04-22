@@ -1,0 +1,106 @@
+MPBoot 1.1.0 built Mar 23 2018
+
+Input file name: algn_os17357.fasta
+Type of analysis: Parsimony tree reconstruction
+Random seed number: 293326
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 38 sequences with 776 nucleotide sites
+Number of constant sites: 675 (= 86.9845% of all sites)
+Number of site patterns: 89
+
+MAXIMUM PARSIMONY TREE
+-----------------------
+
+NOTE: Tree is UNROOTED although outgroup taxon 'AY749360.1_Oryza_punctata_voucher' is drawn at root
+
++--------------------------------AY749360.1_Oryza_punctata_voucher
+|
++---------------------------------------------------------AY749359.1_Oryza_australiensis_voucher
+|
+|                                +--AY749358.1_Oryza_meridionalis_voucher
+|                             +--|
+|                             |  +--AY749357.1_Oryza_meridionalis_voucher
+|                        +----|
+|                        |    +--AY749356.1_Oryza_meridionalis_voucher
++------------------------|
+                         |            +--AY749355.1_Oryza_longistaminata_voucher
+                         |         +--|
+                         |         |  +--AY749354.1_Oryza_longistaminata_voucher
+                         |      +--|
+                         |      |  +--AY749352.1_Oryza_longistaminata_voucher
+                         |   +--|
+                         |   |  +--AY749353.1_Oryza_longistaminata_voucher
+                         +---|
+                             |                     +--AY749351.1_Oryza_barthii_voucher
+                             |                  +--|
+                             |                  |  +--AY749350.1_Oryza_barthii_voucher
+                             |               +--|
+                             |               |  +--AY749346.1_Oryza_glaberrima_voucher
+                             |            +--|
+                             |            |  +--AY749349.1_Oryza_barthii_voucher
+                             |         +--|
+                             |         |  +--AY749347.1_Oryza_glaberrima_voucher
+                             |     +---|
+                             |     |   +--AY749348.1_Oryza_longistaminata_voucher
+                             |  +--|
+                             |  |  |                                     +--AY749345.1_Oryza_glumipatula_voucher
+                             |  |  |                                  +--|
+                             |  |  |                                  |  +--AY749328.1_Oryza_sativa_Japonica
+                             |  |  |                               +--|
+                             |  |  |                               |  +--AY749329.1_Oryza_sativa_Japonica
+                             |  |  |                            +--|
+                             |  |  |                            |  +--AY749327.1_Oryza_sativa_Japonica
+                             |  |  |                         +--|
+                             |  |  |                         |  |        +--AY749341.1_Oryza_nivara_voucher
+                             |  |  |                         |  |     +--|
+                             |  |  |                         |  |     |  +--AY749333.1_Oryza_rufipogon_voucher
+                             |  |  |                         |  |  +--|
+                             |  |  |                         |  |  |  +--AY749331.1_Oryza_rufipogon_voucher
+                             |  |  |                         |  +--|
+                             |  |  |                         |     +--AY749335.1_Oryza_rufipogon_voucher
+                             |  |  |                      +--|
+                             |  |  |                      |  |     +--AY749342.1_Oryza_longistaminata_voucher
+                             |  |  |                      |  |  +--|
+                             |  |  |                      |  |  |  +--AY749334.1_Oryza_rufipogon_OsRFCD017357
+                             |  |  |                      |  +--|
+                             |  |  |                      |     +--AY749332.1_Oryza_rufipogon_voucher
+                             |  |  |                   +--|
+                             |  |  |                   |  |  +--AY749339.1_Oryza_nivara_voucher
+                             |  |  |                   |  +--|
+                             |  |  |                   |     +--AY749337.1_Oryza_nivara_voucher
+                             |  |  |                +--|
+                             |  |  |                |  |  +--AY749340.1_Oryza_nivara_voucher
+                             |  |  |                |  +--|
+                             |  |  |                |     +--AY749324.1_Oryza_sativa_Indica
+                             |  |  |             +--|
+                             |  |  |             |  +---AY749323.1_Oryza_sativa_Indica
+                             |  |  |          +--|
+                             |  |  |          |  +--AY749330.1_Oryza_rufipogon_voucher
+                             |  |  +----------|
+                             |  |             |        +--AY749338.1_Oryza_nivara_voucher
+                             |  |             |     +--|
+                             |  |             |     |  +--AY749326.1_Oryza_sativa_Indica
+                             |  |             |  +--|
+                             |  |             |  |  +--AY749336.1_Oryza_rufipogon_voucher
+                             |  |             +--|
+                             |  |                +--AY749325.1_Oryza_sativa_Indica
+                             +--|
+                                |  +--AY749344.1_Oryza_glumipatula_voucher
+                                +--|
+                                   +--AY749343.1_Oryza_glumipatula_voucher
+
+Parsimony score of the tree: 111
+Tree in newick format:
+
+(AY749360.1_Oryza_punctata_voucher,AY749359.1_Oryza_australiensis_voucher,(((AY749358.1_Oryza_meridionalis_voucher,AY749357.1_Oryza_meridionalis_voucher),AY749356.1_Oryza_meridionalis_voucher),((((AY749355.1_Oryza_longistaminata_voucher,AY749354.1_Oryza_longistaminata_voucher),AY749352.1_Oryza_longistaminata_voucher),AY749353.1_Oryza_longistaminata_voucher),(((((((AY749351.1_Oryza_barthii_voucher,AY749350.1_Oryza_barthii_voucher),AY749346.1_Oryza_glaberrima_voucher),AY749349.1_Oryza_barthii_voucher),AY749347.1_Oryza_glaberrima_voucher),AY749348.1_Oryza_longistaminata_voucher),((((((((((AY749345.1_Oryza_glumipatula_voucher,AY749328.1_Oryza_sativa_Japonica),AY749329.1_Oryza_sativa_Japonica),AY749327.1_Oryza_sativa_Japonica),(((AY749341.1_Oryza_nivara_voucher,AY749333.1_Oryza_rufipogon_voucher),AY749331.1_Oryza_rufipogon_voucher),AY749335.1_Oryza_rufipogon_voucher)),((AY749342.1_Oryza_longistaminata_voucher,AY749334.1_Oryza_rufipogon_OsRFCD017357),AY749332.1_Oryza_rufipogon_voucher)),(AY749339.1_Oryza_nivara_voucher,AY749337.1_Oryza_nivara_voucher)),(AY749340.1_Oryza_nivara_voucher,AY749324.1_Oryza_sativa_Indica)),AY749323.1_Oryza_sativa_Indica),AY749330.1_Oryza_rufipogon_voucher),(((AY749338.1_Oryza_nivara_voucher,AY749326.1_Oryza_sativa_Indica),AY749336.1_Oryza_rufipogon_voucher),AY749325.1_Oryza_sativa_Indica))),(AY749344.1_Oryza_glumipatula_voucher,AY749343.1_Oryza_glumipatula_voucher)))));
+
+TIME STAMP
+----------
+
+Date and time: Tue Apr 22 15:09:50 2025
+Total CPU time used: 0.080803 seconds (0h:0m:0s)
+Total wall-clock time used: 0.0864749 seconds (0h:0m:0s)
+

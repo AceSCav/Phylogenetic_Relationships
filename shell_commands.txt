@@ -21,6 +21,11 @@ python3 Script.py 'nucleotide' 'AY749323:AY749360[accn]' 100
 mv algn_AY749323\:AY749360\[accn\].fasta algn_os17357.fasta
 mv sequences_AY749323\:AY749360\[accn\].fasta sequences_os17373.fasta
 
+mpboot -s algn_adh1.fasta -pre max_parsimony_adh1
+mpboot -s algn_os1283.fasta -pre max_parsimony_os1283
+mpboot -s algn_os17357.fasta -pre max_parsimony_os17357
+mpboot -s algn_os9971.fasta -pre max_parsimony_os9971
+
 modeltest-ng -i algn_adh1.fasta 
 modeltest-ng -i algn_os1283.fasta 
 modeltest-ng -i algn_os17357.fasta 
