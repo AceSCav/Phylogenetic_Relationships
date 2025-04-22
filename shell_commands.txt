@@ -53,7 +53,12 @@ python3 fasta2nex.py algn_os9971.fasta > algn_os9971.nexus
 python3 fasta2nex.py algn_os17357.fasta > algn_os17357.nexus
 
 mb
-execute /home/aleff/Desktop/assingment1/algn_adh1.nexus
-execute /home/aleff/Desktop/assingment1/algn_os1283.nexus
-execute /home/aleff/Desktop/assingment1/algn_os9971.nexus
-execute /home/aleff/Desktop/assingment1/algn_os17357.nexus
+execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_adh1.nexus
+execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os1283.nexus
+execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os9971.nexus
+execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os17357.nexus
+
+
+
+
+
