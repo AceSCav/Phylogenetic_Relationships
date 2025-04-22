@@ -1,0 +1,180 @@
+--------------------------------------------------------------------------------
+ModelTest-NG v0.1.7
+
+Input data:
+  MSA:        algn_adh1.fasta
+  Tree:       Maximum parsimony
+    file:           -
+  #taxa:            38
+  #sites:           942
+  #patterns:        165
+  Max. thread mem:  3 MB
+
+Output:
+  Log:           algn_adh1.fasta.log
+  Starting tree: algn_adh1.fasta.tree
+  Results:       algn_adh1.fasta.out
+
+Selection options:
+  # dna schemes:      11
+  # dna models:       88
+  include model parameters:
+    Uniform:         true
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: true
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          1/8
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  HKY                4     -2386.3850      5300.0665         0.0000    0.2830
+       2  TPM1uf             5     -2383.0408      5300.2260         0.1595    0.2613
+       3  TPM2uf             5     -2383.6187      5301.3819         1.3154    0.1466
+       4  HKY+G4             5     -2384.5712      5303.2868         3.2203    0.0566
+       5  TPM1uf+G4          6     -2381.2673      5303.5271         3.4606    0.0502
+       6  HKY+I              5     -2385.0869      5304.3183         4.2518    0.0338
+       7  TPM1uf+I           6     -2381.7588      5304.5100         4.4435    0.0307
+       8  TPM2uf+G4          6     -2381.9475      5304.8875         4.8210    0.0254
+       9  TrN                5     -2385.5680      5305.2804         5.2140    0.0209
+      10  TIM1               6     -2382.2294      5305.4513         5.3848    0.0192
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              HKY
+lnL:                -2386.3850
+Frequencies:        0.2150 0.1512 0.2238 0.4100
+Subst. Rates:       1.0000 2.9745 1.0000 1.0000 2.9745 1.0000 
+Inv. sites prop:    -
+Gamma shape:        -
+Score:              5300.0665
+Weight:             0.2830
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.0882
+Gamma:              0.1454
+Gamma-Inv:          0.0047
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.2536
+Alpha:              1.7895
+Alpha-P.Inv:        1.9268
+P.Inv-Alpha:        0.0213
+Frequencies:        0.2166 0.1512 0.2216 0.4106 
+
+Commands:
+  > phyml  -i algn_adh1.fasta -m 010010 -f m -v 0 -a 0 -c 1 -o tlr
+  > raxmlHPC-SSE3 -s algn_adh1.fasta -c 1 -m GTRCATX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa algn_adh1.fasta --model HKY
+  > paup -s algn_adh1.fasta
+  > iqtree -s algn_adh1.fasta -m HKY
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  TPM1uf+G4          6     -2381.2673      4920.5346         0.0000    0.0959
+       2  TIM1+G4            7     -2380.4868      4920.9736         0.4390    0.0770
+       3  TVM+G4             8     -2379.6800      4921.3599         0.8253    0.0635
+       4  TPM1uf+I           6     -2381.7588      4921.5176         0.9830    0.0587
+       5  TIM1+I             7     -2380.9112      4921.8224         1.2877    0.0504
+       6  GTR+G4             9     -2378.9214      4921.8428         1.3082    0.0499
+       7  TPM2uf+G4          6     -2381.9475      4921.8951         1.3604    0.0486
+       8  TPM1uf             5     -2383.0408      4922.0816         1.5470    0.0442
+       9  TIM2+G4            7     -2381.1461      4922.2922         1.7576    0.0398
+      10  TVM+I              8     -2380.2091      4922.4183         1.8836    0.0374
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              TPM1uf+G4
+lnL:                -2381.2673
+Frequencies:        0.2170 0.1510 0.2213 0.4106
+Subst. Rates:       1.0000 2.3477 0.5390 0.5390 2.3477 1.0000 
+Inv. sites prop:    -
+Gamma shape:        1.8299
+Score:              4920.5346
+Weight:             0.0959
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.2506
+Gamma:              0.4032
+Gamma-Inv:          0.1460
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.2471
+Alpha:              1.8348
+Alpha-P.Inv:        1.9703
+P.Inv-Alpha:        0.0215
+Frequencies:        0.2168 0.1519 0.2188 0.4125 
+
+Commands:
+  > phyml  -i algn_adh1.fasta -m 012210 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s algn_adh1.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa algn_adh1.fasta --model TPM1uf+G4
+  > paup -s algn_adh1.fasta
+  > iqtree -s algn_adh1.fasta -m TPM1uf+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  TPM1uf+G4          6     -2381.2673      4934.5346         0.0000    0.1249
+       2  TPM1uf+I           6     -2381.7588      4935.5176         0.9830    0.0764
+       3  TPM2uf+G4          6     -2381.9475      4935.8951         1.3604    0.0633
+       4  TIM1+G4            7     -2380.4868      4935.9736         1.4390    0.0608
+       5  TPM1uf             5     -2383.0408      4936.0816         1.5470    0.0576
+       6  TVM+G4             8     -2379.6800      4936.3599         1.8253    0.0501
+       7  TIM1               6     -2382.2294      4936.4589         1.9242    0.0477
+       8  TIM1+I             7     -2380.9112      4936.8224         2.2877    0.0398
+       9  GTR+G4             9     -2378.9214      4936.8428         2.3082    0.0394
+      10  TPM2uf+I           6     -2382.4446      4936.8892         2.3545    0.0385
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              TPM1uf+G4
+lnL:                -2381.2673
+Frequencies:        0.2170 0.1510 0.2213 0.4106
+Subst. Rates:       1.0000 2.3477 0.5390 0.5390 2.3477 1.0000 
+Inv. sites prop:    -
+Gamma shape:        1.8299
+Score:              4934.5346
+Weight:             0.1249
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              0.2505
+Gamma:              0.4047
+Gamma-Inv:          0.1115
+Frequencies:        1.0000
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              0.2481
+Alpha:              1.8372
+Alpha-P.Inv:        1.9632
+P.Inv-Alpha:        0.0215
+Frequencies:        0.2169 0.1518 0.2191 0.4122 
+
+Commands:
+  > phyml  -i algn_adh1.fasta -m 012210 -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s algn_adh1.fasta -m GTRGAMMAX -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa algn_adh1.fasta --model TPM1uf+G4
+  > paup -s algn_adh1.fasta
+  > iqtree -s algn_adh1.fasta -m TPM1uf+G4
+Done
