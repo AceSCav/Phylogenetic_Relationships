@@ -27,15 +27,31 @@ mv algn_AY749323\:AY749360\[accn\].fasta algn_os17357.fasta
 cp algn_os17357.fasta ./concat_seq/
 rm sequences_AY749323\:AY749360\[accn\].fasta sequences_os17373.fasta
 
-mpboot -s algn_adh1.fasta -pre max_parsimony_adh1
-mpboot -s algn_os1283.fasta -pre max_parsimony_os1283
-mpboot -s algn_os17357.fasta -pre max_parsimony_os17357
-mpboot -s algn_os9971.fasta -pre max_parsimony_os9971
+cd concat_seq/
+python3 names_converter.py algn_os1283.fasta ids_names.csv 
+python3 names_converter.py algn_os9971.fasta ids_names.csv 
+python3 names_converter.py algn_os17357.fasta ids_names.csv 
+rm algn_os1283.fasta
+rm algn_os17357.fasta 
+rm algn_os9971.fasta
+cd ..
+python3 Concatenate.py concat_seq/ concat_os.fasta
+
+mpboot -s algn_adh1.fasta -pre max_parsimony_adh1 -bb 1000
+mpboot -s algn_os1283.fasta -pre max_parsimony_os1283 -bb 1000
+mpboot -s algn_os17357.fasta -pre max_parsimony_os17357 -bb 1000
+mpboot -s algn_os9971.fasta -pre max_parsimony_os9971 -bb 1000
+mpboot -s concat_os.fasta -pre concat_os -bb 1000
 
 modeltest-ng -i algn_adh1.fasta 
 modeltest-ng -i algn_os1283.fasta 
 modeltest-ng -i algn_os17357.fasta 
-modeltest-ng -i algn_os9971.fasta 
+modeltest-ng -i algn_os9971.fasta
+modeltest-ng -i concat_os.fasta
+
+raxml-ng --msa concat_os.fasta --model TIM3+G4 --prefix concat --threads 5 --seed 2
+raxml-ng --bootstrap --msa concat_os.fasta --model TIM3+G4 --prefix concat --seed 2 --threads 5
+raxml-ng --support --tree concat.raxml.bestTree --bs-trees concat.raxml.bootstraps --prefix concat --threads 5
 
 raxml-ng --msa algn_adh1.fasta --model TPM1uf+G4 --prefix ADH1 --threads 5 --seed 2
 raxml-ng --bootstrap --msa algn_adh1.fasta --model TPM1uf+G4 --prefix ADH1 --seed 2 --threads 5
@@ -57,14 +73,13 @@ python3 fasta2nex.py algn_adh1.fasta > algn_adh1.nexus
 python3 fasta2nex.py algn_os1283.fasta > algn_os1283.nexus
 python3 fasta2nex.py algn_os9971.fasta > algn_os9971.nexus
 python3 fasta2nex.py algn_os17357.fasta > algn_os17357.nexus
+python3 fasta2nex.py concat_os.fasta > concat_os.nexus
 
 mb
 execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_adh1.nexus
 execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os1283.nexus
 execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os9971.nexus
 execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os17357.nexus
-
-
-
+execute /home/aleff/Desktop/Phylogenetic_Relationships/concat_os.nexus
 
 
