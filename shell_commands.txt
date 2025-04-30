@@ -6,22 +6,26 @@ FigTree Tree Figure Drawing Tool Version 1.4.4
 
 https://github.com/Rendrick27/FASTA2NEX
 
-
+mkdir concat_seq
 python3 Script.py 'nucleotide' 'AY749209:AY749246[accn]' 100
 mv algn_AY749209\:AY749246\[accn\].fasta algn_adh1.fasta
-mv sequences_AY749209\:AY749246\[accn\].fasta sequences_adh1.fasta
-
+cp algn_adh1.fasta ./concat_seq/
+rm sequences_AY749209\:AY749246\[accn\].fasta sequences_adh1.fasta
+ 
 python3 Script.py 'nucleotide' 'AY749247:AY749284[accn]' 100
 mv algn_AY749247\:AY749284\[accn\].fasta algn_os1283.fasta
-mv sequences_AY749247\:AY749284\[accn\].fasta sequences_os1283.fasta
+cp algn_os1283.fasta ./concat_seq/
+rm sequences_AY749247\:AY749284\[accn\].fasta sequences_os1283.fasta
 
 python3 Script.py 'nucleotide' 'AY749285:AY749322[accn]' 100
 mv algn_AY749285\:AY749322\[accn\].fasta algn_os9971.fasta
-mv sequences_AY749285\:AY749322\[accn\].fasta sequences_os9971.fasta
+cp algn_os9971.fasta ./concat_seq/
+rm  sequences_AY749285\:AY749322\[accn\].fasta sequences_os9971.fasta
 
 python3 Script.py 'nucleotide' 'AY749323:AY749360[accn]' 100
 mv algn_AY749323\:AY749360\[accn\].fasta algn_os17357.fasta
-mv sequences_AY749323\:AY749360\[accn\].fasta sequences_os17373.fasta
+cp algn_os17357.fasta ./concat_seq/
+rm sequences_AY749323\:AY749360\[accn\].fasta sequences_os17373.fasta
 
 mpboot -s algn_adh1.fasta -pre max_parsimony_adh1
 mpboot -s algn_os1283.fasta -pre max_parsimony_os1283
