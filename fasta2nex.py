@@ -77,9 +77,11 @@ def generate_nexus_header(sequences):
 
     mrbayes_block = f"""begin mrbayes;
   set autoclose=yes;
-  mcmcp ngen=1000000 printfreq=1000 samplefreq=100 diagnfreq=1000 nchains=4 savebrlens=yes filename={mrbayes_filename};
+  lset nst=2 rates=gamma;
+  mcmcp ngen=2000000 printfreq=1000 samplefreq=100 diagnfreq=1000 nchains=4 savebrlens=yes filename={mrbayes_filename};
   mcmc;
   sumt filename={mrbayes_filename};
+  quit;
 end;
 """
 

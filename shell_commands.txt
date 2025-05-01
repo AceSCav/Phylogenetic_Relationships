@@ -3,45 +3,41 @@ MAFFT v7.505 (2022/Apr/10)
 ModelTest-NG v0.1.7 released on 17.03.2021 by The Exelixis Lab.
 RAxML-NG v. 1.2.2 released on 11.04.2024 by The Exelixis Lab.
 FigTree Tree Figure Drawing Tool Version 1.4.4
-
 https://github.com/Rendrick27/FASTA2NEX
+https://github.com/StarGazerNex/Phylogeny/blob/main/Code/concatenate_fasta
 
-mkdir concat_seq
-python3 Script.py 'nucleotide' 'AY749209:AY749246[accn]' 100
+
+python3 Fasta_Entrez.py 'nucleotide' 'AY749209:AY749246[accn]' 1000
 mv algn_AY749209\:AY749246\[accn\].fasta algn_adh1.fasta
-cp algn_adh1.fasta ./concat_seq/
-rm sequences_AY749209\:AY749246\[accn\].fasta sequences_adh1.fasta
- 
-python3 Script.py 'nucleotide' 'AY749247:AY749284[accn]' 100
+python3 Fasta_Entrez.py 'nucleotide' 'AY749247:AY749284[accn]' 1000
 mv algn_AY749247\:AY749284\[accn\].fasta algn_os1283.fasta
-cp algn_os1283.fasta ./concat_seq/
-rm sequences_AY749247\:AY749284\[accn\].fasta sequences_os1283.fasta
-
-python3 Script.py 'nucleotide' 'AY749285:AY749322[accn]' 100
+rm sequences_AY749247\:AY749284\[accn\].fasta 
+python3 Fasta_Entrez.py 'nucleotide' 'AY749285:AY749322[accn]' 1000
 mv algn_AY749285\:AY749322\[accn\].fasta algn_os9971.fasta
-cp algn_os9971.fasta ./concat_seq/
-rm  sequences_AY749285\:AY749322\[accn\].fasta sequences_os9971.fasta
-
-python3 Script.py 'nucleotide' 'AY749323:AY749360[accn]' 100
+python3 Fasta_Entrez.py 'nucleotide' 'AY749323:AY749360[accn]' 1000
 mv algn_AY749323\:AY749360\[accn\].fasta algn_os17357.fasta
-cp algn_os17357.fasta ./concat_seq/
-rm sequences_AY749323\:AY749360\[accn\].fasta sequences_os17373.fasta
+rm sequences_AY749209\:AY749246\[accn\].fasta sequences_AY749323\:AY749360\[accn\].fasta sequences_AY749285\:AY749322\[accn\].fasta sequences_AY749247\:AY749284\[accn\].fasta ids_AY749209:AY749246[accn].xml ids_AY749247:AY749284[accn].xml ids_AY749285:AY749322[accn].xml ids_AY749323:AY749360[accn].xml
 
-cd concat_seq/
 python3 names_converter.py algn_os1283.fasta ids_names.csv 
 python3 names_converter.py algn_os9971.fasta ids_names.csv 
-python3 names_converter.py algn_os17357.fasta ids_names.csv 
-rm algn_os1283.fasta
-rm algn_os17357.fasta 
-rm algn_os9971.fasta
-cd ..
+python3 names_converter.py algn_os17357.fasta ids_names.csv
+python3 names_converter.py algn_adh1.fasta ids_names.csv
+mv algn_os1283_mod.fasta algn_os1283.fasta
+mv algn_os9971_mod.fasta algn_os9971.fasta
+mv algn_os17357_mod.fasta algn_os17357.fasta
+mv algn_adh1_mod.fasta algn_adh1.fasta
+mkdir concat_seq
+cp algn_os1283.fasta ./concat_seq/
+cp algn_os9971.fasta ./concat_seq/
+cp algn_os17357.fasta ./concat_seq/
 python3 Concatenate.py concat_seq/ concat_os.fasta
+rm -rf concat_seq/
 
-mpboot -s algn_adh1.fasta -pre max_parsimony_adh1 -bb 1000
-mpboot -s algn_os1283.fasta -pre max_parsimony_os1283 -bb 1000
-mpboot -s algn_os17357.fasta -pre max_parsimony_os17357 -bb 1000
-mpboot -s algn_os9971.fasta -pre max_parsimony_os9971 -bb 1000
-mpboot -s concat_os.fasta -pre concat_os -bb 1000
+mpboot -s algn_adh1.fasta -pre max_parsimony_adh1 -bb 4000
+mpboot -s algn_os1283.fasta -pre max_parsimony_os1283 -bb 4000
+mpboot -s algn_os17357.fasta -pre max_parsimony_os17357 -bb 4000
+mpboot -s algn_os9971.fasta -pre max_parsimony_os9971 -bb 4000
+mpboot -s concat_os.fasta -pre max_parsimony_concat_os -bb 4000
 
 modeltest-ng -i algn_adh1.fasta 
 modeltest-ng -i algn_os1283.fasta 
@@ -75,11 +71,10 @@ python3 fasta2nex.py algn_os9971.fasta > algn_os9971.nexus
 python3 fasta2nex.py algn_os17357.fasta > algn_os17357.nexus
 python3 fasta2nex.py concat_os.fasta > concat_os.nexus
 
-mb
-execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_adh1.nexus
-execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os1283.nexus
-execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os9971.nexus
-execute /home/aleff/Desktop/Phylogenetic_Relationships/algn_os17357.nexus
-execute /home/aleff/Desktop/Phylogenetic_Relationships/concat_os.nexus
+mb -i algn_os9971.nexus
+mb -i algn_os1283.nexus
+mb -i algn_adh1.nexus
+mb -i algn_os17357.nexus
+mb -i concat_os.nexus
 
 
